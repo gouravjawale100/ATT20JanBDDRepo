@@ -10,7 +10,8 @@ import io.cucumber.testng.CucumberOptions;
 		glue = {"uiappfeature"},
 		
 		plugin = {"pretty", "html:target/amazontestreport/reports.html",
-				"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
+				"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
+				"json:target/cucumber-report.json"},
 		
 		publish = true,	
 		
