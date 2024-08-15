@@ -10,8 +10,9 @@ pipeline {
 
                 stage('Executing on Chrome browser') {
                     
-            
+            steps {
                     sh "mvn clean test -Dclibrowser=Chrome"
+                }
                         
                 
      post { 
