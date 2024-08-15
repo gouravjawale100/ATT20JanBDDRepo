@@ -6,17 +6,20 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class DriverFactory {
 	static WebDriver driver;
+	Capabilities capabilities;
 	
-	public WebDriver initBrowser(String browserName)
+	public WebDriver initBrowser(String browserName) throws MalformedURLException
 	{
 		if(browserName.equals("Chrome"))
 		{
-		driver = new ChromeDriver();
+		capabilities = new ChromeOptions();
 		}
 		else if(browserName.equals("Firefox"))
 		{
-		driver= new FirefoxDriver();
+			capabilities = new FirefoxOptions();
 		}
+		
+		driver = new RemoteWebDriver(new URL("http://54.163.26.174:4444/wd/hub"), capabilities);
 		
 		return driver;
 	}
